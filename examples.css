@@ -15,6 +15,12 @@ table {
 fieldset,img {
     border: 0;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 address,caption,cite,code,dfn,em,strong,th,var {
     font-weight: normal;
     font-style: normal;
