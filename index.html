@@ -9,21 +9,24 @@
 <body>
 <div id="wrapper">
 	<div class="section">
-		
+		<h1>تجربة</h1>
+		<p>مرحبا</p>
 	</div>
 	<div class="section">
-		
+		<h1>تجربة 2</h1>
 	</div>
 	<div class="section">
-		
+		<h1>تجربة 3</h1>
 	</div>
 	<div class="section">
-		
+		<h1>تجربة 4</h1>
 	</div>
 </div>
 <script>
 $(document).ready(function(){
-	$('#wrapper').fullpage();
+	$('#wrapper').fullpage({
+      sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke']
+    });
 });
 </script>
 </body>
