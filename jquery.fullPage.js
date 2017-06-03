@@ -193,7 +193,7 @@
         }, options);
 
         //flag to avoid very fast sliding for landscape sliders
-        var slideMoving = false;
+        var slideMoving = true;
 
         var isTouchDevice = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|playbook|silk|BlackBerry|BB10|Windows Phone|Tizen|Bada|webOS|IEMobile|Opera Mini)/);
         var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0) || (navigator.maxTouchPoints));
@@ -540,9 +540,45 @@
             FP.setResponsive = setResponsive;
             FP.destroy = destroy;
 
+            FP.getSections = getSections;
+            FP.getNumberOfSections = getNumberOfSections;
+            FP.getCurrentSection = getCurrentSection;
+            FP.getCurrentSectionIndex = getCurrentSectionIndex;
+            FP.getCurrentSlides = getCurrentSlides;
+            FP.getNumberOfSlides = getNumberOfSlides;
+
             init();
 
             bindEvents();
+        }
+
+        function getSections(){
+            return $(SECTION_DEFAULT_SEL);
+        }
+
+        function getNumberOfSections(){
+            return $(SECTION_DEFAULT_SEL).length;
+        }
+
+        function getCurrentSection(){
+            return $(SECTION_ACTIVE_SEL);
+        }
+
+        function getCurrentSectionIndex(){
+            var activeSection = $(SECTION_ACTIVE_SEL);
+            return activeSection.index(SECTION_SEL);
+        }
+
+        function getCurrentSlides(){
+            //return getCurrentSection.find(SLIDE_SEL);
+            var activeSection = $(SECTION_ACTIVE_SEL);
+            return activeSection.find(SLIDES_WRAPPER_SEL);
+        }
+
+        function getNumberOfSlides(){
+            var activeSection = $(SECTION_ACTIVE_SEL);
+            var slides = activeSection.find(SLIDES_WRAPPER_SEL);
+            return slides.find(SLIDE_SEL).length;
         }
 
         function init(){

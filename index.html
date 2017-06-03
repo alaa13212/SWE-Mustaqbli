@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-
+ 
+<!-- in the head tag of the page you want -->
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>هندسة البرمجيات</title>
@@ -8,6 +9,7 @@
 	<meta name="description" content="fullPage plugin by Alvaro Trigo. Create fullscreen pages fast and simple. One page scroll like iPhone website." />
 	<meta name="keywords"  content="fullpage,jquery,alvaro,trigo,plugin,fullscren,screen,full,iphone5,apple" />
 	<meta name="Resource-type" content="Document" />
+	<meta http-equiv="Content-language" content="ar">
 
 
 	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
@@ -56,15 +58,88 @@
 	<script type="text/javascript" src="examples.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#fullpage').fullpage({
-				sectionsColor: ['#4BBFC3', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-				anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+
+			var sectionAnchors = ['firstPage', 'secondPage', '3rdPage', '4thpage'];
+			var fullPage = $('#fullpage').fullpage({
+				sectionsColor: ['#4BBFC3', '#4BBFC3', '#7BAABE', 'whitesmoke'],
+				anchors: sectionAnchors,
 				menu: '#menu',
-				scrollingSpeed: 1000
+				scrollingSpeed: 1000,
+				continuousVertical: true //Useful for auto animation, to get back up automatically
 			});
+
+			var fullpage = $('#fullpage').fullpage;
+
+			//var sectionIndex = 0;
+			var slideIndex = fullpage.getNumberOfSlides() - 1;
+			//var numberOfSlides = fullpage.getNumberOfSlides();
+
+			function animation() {
+
+				//var currentSection = fullpage.getCurrentSection();
+
+				//console.log(fullpage.getSections());
+
+				if(slideIndex <= 0){
+					fullpage.moveSlideLeft();
+					fullpage.moveSectionDown();
+					slideIndex = fullpage.getNumberOfSlides() - 1;
+				}else{
+					fullpage.moveSlideLeft();
+					slideIndex--;
+				}
+
+
+
+				//fullpage.moveTo(sectionIndex, slideIndex);
+
+				//console.log(fullpage.getCurrentSection);
+
+				
+
+				//console.log(sectionIndex);
+
+				/*if(sectionIndex == sectionAnchors.length){
+					sectionIndex = 0;
+				}*/
+			   
+			   /*var slide = fullPage.getSlideByAnchor(2, 'secondPage');
+			   fullPage.scrollPageAndSlide('secondPage', slide);*/
+
+			}
+			/*var fullPage = $('#fullPage').fullpage;
+			   console.log(fullPage);
+			   var slide = fullPage.getSlideByAnchor(2, 'secondPage');
+			   fullPage.scrollPageAndSlide('secondPage', slide);*/
+
+            //Number of seconds to stay before moving to the next section or slide
+			var numberOfSeconds = 20;
+
+		    //Applying auto animation (comment this to disable auto animation)
+			var autoAnimation = setInterval(animation, numberOfSeconds * 1000);
+			
 
 		});
 	</script>
+
+
+	<!-- Replace English numbers with Arabic numbers -->
+	<!-- <script type="text/javascript">
+		var replaceDigits = function() {
+			var map = 
+		                [
+		                "&\#1632;","&\#1633;","&\#1634;","&\#1635;","&\#1636;",
+		                "&\#1637;","&\#1638;","&\#1639;","&\#1640;","&\#1641;"
+		                ]
+		 
+			document.body.innerHTML = 
+				document.body.innerHTML.replace(
+					/\d(?=[^<>]*(<|$))/g,
+					function($0) { return map[$0] }
+				);
+		}
+		window.onload = replaceDigits
+	</script> -->
 
 </head>
 <body>
@@ -78,7 +153,7 @@
 
 
 <div id="fullpage">
-	<div class="section active" id="section0">
+	<div class="section" id="section0">
 		<h1>ماهي هندسة البرمجيات؟</h1>
 		 <input type="hidden" name="id" value="1" />
 		<p>هي مهنة تهتم بتطوير وتصميم البرمجيات عالية الجودة، آخذةً بعين الاعتبار تخصيصات المستخدم ومتطلباته على جميع المستويات. تهتم هندسة البرمجيات بتكوين البرنامج منذ مراحله الأولى أثناء تحليل المشكلة، ومن ثم التصميم وكتابة البرنامج حتى القيام بتجريبه واختباره، إلى أن يتم تنصيبه على الأجهزة والقيام بعملية صيانته.</p>
@@ -89,7 +164,7 @@
 			<div class="intro">
 				<img src="imgs/evolution.png" alt="Compatible" />
 				<h1>5- التطوير</h1>
-				<p>عد انتهاء مرحلة الاختبار، والتأكد من أن البرنامج فعال، ويقوم بالوظيفة المطلوبة منه بأفضل كفاءة وأقل كلفة، يعمل الفريق على البحث عن سبل تطوير البرنامج، وإضافة ميزات جديدةٍ له، وجعله أكثر فاعلية وأكثر كفاءة.</p>
+				<p>بعد انتهاء مرحلة الاختبار، والتأكد من أن البرنامج فعال، ويقوم بالوظيفة المطلوبة منه بأفضل كفاءة وأقل كلفة، يعمل الفريق على البحث عن سبل تطوير البرنامج، وإضافة ميزات جديدةٍ له، وجعله أكثر فاعلية وأكثر كفاءة.</p>
 			</div>
 		</div>
 		<div class="slide">
@@ -110,7 +185,7 @@
 			<div class="intro">
 				<img src="imgs/design.png" alt="simple" />
 				<h1>2- التصميم</h1>
-				<p>في مرحلة التصميم، يضع الفريق الأفكار المتعلقة بكيفية تصميم البرنامج. هنا يتم النقاش حول ما هي أفضل لغة برمجة أو بيئة برمجة قابلة للاستخدام من أجل تنفيذ البرنامج المطلوب بالمتطلبات المحددة. كما أنه يتم وضع الخطوط الأساسية وهيكلة بنية البرنامج.</p>
+				<p>في مرحلة التصميم، يضع الفريق الأفكار المتعلقة بكيفية تصميم البرنامج. هنا يتم النقاش حول ما هي أفضل لغة برمجة أو بيئة برمجة قابلة للاستخدام من أجل تنفيذ البرنامج المطلوب بالمتطلبات المحددة، كما أنه يتم وضع الخطوط الأساسية وهيكلة بنية البرنامج.</p>
 			</div>
 		</div>
 		<div class="slide active">
