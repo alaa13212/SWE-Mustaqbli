@@ -25,7 +25,7 @@
 			margin: 20px 0 0 0;
 		}
 		#section2 img{
-			margin: 20px 0 0 52px;
+			margin: 20px 0 0 32px;
 		}
 		#section3 img{
 			bottom: 0px;
@@ -33,6 +33,11 @@
 			margin-left: -420px;
 		}
 		.intro p{
+			width: 50%;
+			margin: 0 auto;
+			font-size: 1.5em;
+		}
+		.intro ul{
 			width: 50%;
 			margin: 0 auto;
 			font-size: 1.5em;
@@ -60,8 +65,8 @@
 		$(document).ready(function() {
 
 			var sectionAnchors = ['firstPage', 'secondPage', '3rdPage', '4thpage'];
-			var fullPage = $('#fullpage').fullpage({
-				sectionsColor: ['#4BBFC3', '#4BBFC3', '#7BAABE', 'whitesmoke'],
+			var fullPage = $('#fullpage').fullpage({//7BAABE
+				sectionsColor: ['#4BBFC3', '#7BAABE', 'whitesmoke', 'whitesmoke'],
 				anchors: sectionAnchors,
 				menu: '#menu',
 				scrollingSpeed: 1000,
@@ -148,7 +153,7 @@
 	<li data-menuanchor="firstPage"><a href="#firstPage">ماهي هندسة البرمجيات؟</a></li>
 	<li data-menuanchor="secondPage"><a href="#secondPage">مراحل هندسة البرمجيات</a></li>
 	<li data-menuanchor="3rdPage"><a href="#3rdPage">الأسئلة الشائعة</a></li>
-	<li data-menuanchor="4thpage"><a href="#4thpage">اقتباسات مشهورة</a></li>
+	<!-- <li data-menuanchor="4thpage"><a href="#4thpage">اقتباسات مشهورة</a></li> -->
 </ul>
 
 
@@ -202,7 +207,7 @@
 			<div class="intro">
 				<img src="imgs/company.png" alt="Compatible" />
 				<h1>س9- ما هي الشركات التي تطلب مهندس البرمجيات؟</h1>
-				<p>الشركات الكبيرة مثل ارامكو وسابك و، لكن متطلبات السوق سوف تختلف في السنوات القادمة.</p>
+				<p>الشركات الكبيرة مثل ارامكو وسابك ، ولكن متطلبات السوق سوف تختلف في السنوات القادمة.</p>
 			</div>
 		</div>
 		<div class="slide">
@@ -216,7 +221,8 @@
 			<div class="intro">
 				<img src="imgs/vs.png" alt="Cool" />
 				<h1>س7- ما هو الفرق بين هندسة البرمجيات وعلوم الحاسب؟</h1>
-				<p>.</p>
+				<p>
+يوجد تشابه كبير بين التخصصين مثل انهما بإمكانهما البرمجة وتطوير المواقع وغيرها، ولكن الفرق بينهما ان علوم الحاسب تهتم بإيجاد نظريات جديدة مثل ايجاد خورازميات جديدة اما هندسة البرمجيات تأخذ النظريات من عالم الحاسب وتطبقها على ارض الواقع بإحترافية وبشكل منظم.</p>
 			</div>
 		</div>
 		<div class="slide">
@@ -229,7 +235,7 @@
 		<div class="slide">
 			<div class="intro">
 				<img src="imgs/format-memory.png" alt="Cool" />
-				<h1>س5- هل هندسة البرمجيات تختص بضبط المصنع للاجهزة الالكترونية(فورمات)؟</h1>
+				<h1>س5- هل هندسة البرمجيات تختص بضبط المصنع للاجهزة؟</h1>
 				<p>لا وألف لا، هذا عمل الفني في محلات التصليح، وفرق بين عمل المهندس وعمل الفني، عمل المهندس مختص في مراحل هندسة البرمجيات.</p>
 			</div>
 		</div>
@@ -237,13 +243,13 @@
 			<div class="intro">
 				<img src="imgs/Job_Board_Icon.png" alt="Cool" />
 				<h1>س4- هل تتوفر وظائف في هذا التخصص؟</h1>
-				<p>نعم اغلب التخصصات فيها وظائف، لكن ما نعرف كم عدد الوظائف المتاحة في الخمس السنوات القادمة.</p>
+				<p>نعم اغلب التخصصات فيها وظائف، لكن لا نعلم عدد الوظائف المتاحة في الخمس السنوات القادمة.</p>
 			</div>
 		</div>
 		<div class="slide">
 			<div class="intro">
 				<img src="imgs/Work-env.png" alt="slider" />
-				<h1>س3- ما هي طبيعة العمل كمهندس برمجيات؟</h1>
+				<h1>س3- ما هي طبيعة عمل مهندس البرمجيات؟</h1>
 				<p>بعد تحديد المتطلبات والأهداف والاتفاق على لغة البرمجة ووضع الخطوط الأساسية للبرنامج وبنيته، يقوم الفريق بتنفيذ البرنامج.</p>
 			</div>
 		</div>
@@ -252,26 +258,28 @@
 				<img src="imgs/graduationcap.png" alt="simple" />
 				<h1>س2- ما هي الجامعات التي تُدرّس هذا التخصص؟</h1>
 				<ul>
+					<li>من أشهر الجامعات التي تُدرّس هندسة البرمجيات:</li>
   					<li>جامعة الملك فهد للبترول والمعادن</li>
   					<li>جامعة الملك سعود</li>
-  					<li>يُدرّس في جامعات الخارج</li>
+  					<li>وايضاً يُدرّس في جامعات الخارج</li>
 				</ul>
 			</div>
 		</div>
 		<div class="slide active">
 			<div class="intro">
 				<img src="imgs/twitter.png" alt="slider" />
-				<h1>س1- ما هي تطبيقات التخصص؟</h1>
-				<ul class="">
+				<h1>س1- ما هي تطبيقات هندسة البرمجيات؟</h1>
+				<ul>
+					<li>تطبيقات هندسة البرمجيات كثيرة، والتالي امثلة على هذه التطبيقات:-</li>
   					<li>تطبيقات الويب: تويتر</li>
   					<li>تطبيقات الانظمة: ويندوز</li>
-  					<li>تطبيقات الجوال: </li>
+  					<li>تطبيقات سطح المكتب: مايكروسوفت أوفيس</li>
 				</ul>
 			</div>
 		</div>
 		
 	</div>
-	<div class="section" id="section3">
+	<!-- <div class="section" id="section3">
 		<div class="intro">
 			<h1>Working On Tablets</h1>
 			<p>
@@ -280,7 +288,7 @@
 			</p>
 		</div>
 		<img src="imgs/tablets.png" alt="tablets" />
-	</div>
+	</div> -->
 </div>
 
 </body>
